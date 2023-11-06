@@ -28,11 +28,15 @@
 
 <script type="text/javascript">
     function displayMessage() {
+        // Récuperer le prénom de la personne 
         let firstname = document.getElementById("firstname").value;
+        // Récuperer le nom de famille de la personne
         let lastname = document.getElementById("lastname").value;
+        // Opération pour avoir le prénom suivi d'un espace et le nom
         let fullname = firstname + " " + lastname.toUpperCase();
+        // Message retour avec son Nom et prénom a la suite
         let message = "Bonjour " + fullname;
-
+        // Résultat final qui s'affiche à l'utilisateur
         alert(message)
     }
 </script>
