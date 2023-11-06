@@ -44,6 +44,21 @@
         let selectedArticle = articles.options[articles.selectedIndex].value;
 
         // CODE HERE !
+        let one = 30
+        let two = 50
+        let value;
+
+        if (selectedArticle === "one") {
+            value = one;
+        } else if (selectedArticle === "two") {
+            value = two;
+        }
+
+        // Appliquer le code promo
+        let promotion = 0.10;
+        let valuepanier = value - (value * promotion);
+
+        alert("La valeur de votre panier est de " + valuepanier + '\u20AC');
     }
 </script>
 </body>
