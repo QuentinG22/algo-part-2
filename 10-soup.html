@@ -61,21 +61,76 @@
 </div>
 
 <script type="text/javascript">
+
+    /*
+    * Cette function à analyser les éléments sélectionner sur la page
+    * et de renvoyer une alert en consequence de la sélection grâce au button
+    */
+
     function doYouLikeIt() {
         // CODE HERE !
+    // Récuperer les paramètres rentrer dans chaque funtion
+    let salty = isSalty();
+    let sweet = isSweet();
+    let poisoned = isPoisoned();
+
+    // Selon les éléments sélectionner le bon message apparaitra
+
+        if (poisoned) {
+        alert("Game over...");
+        } 
+    
+        else if (salty && sweet) {
+        alert("Beurk... c'est pas bon !");
+        } 
+    
+        else if (salty) {
+        alert("Hum la bonne sou-soupe salée !");
+        } 
+    
+        else if (sweet) {
+        alert("Hum la bonne sou-soupe sucrée !");
+        }
     }
 
+    /*
+    * Cette function sert a envoyer les éléments sélectionner 
+    * de type salé a la function du button
+    */
+
     function isSalty() {
-        let carrots = document.getElementById("carrots").checked;
         // CODE HERE !
+    let carrots = document.getElementById("carrots").checked;
+    let tomatoes = document.getElementById("tomatoes").checked;
+    let potatoes = document.getElementById("potatoes").checked;
+
+    return carrots || tomatoes || potatoes;
     }
+
+    /*
+    * Cette function sert a envoyer les éléments sélectionner 
+    * de type sucré a la function du button
+    */
 
     function isSweet() {
         // CODE HERE !
+    let whiteChocolate = document.getElementById("white-chocolate").checked;
+    let blackChocolate = document.getElementById("black-chocolate").checked;
+
+    return chocolate = whiteChocolate || blackChocolate;
     }
+
+    /*
+    * Cette function sert a envoyer les éléments sélectionner 
+    * de type poison a la function du button
+    */
 
     function isPoisoned() {
         // CODE HERE !
+    let cyanide = document.getElementById("cyanide").checked;
+    let vitriol = document.getElementById("vitriol").checked;
+
+    return cyanide || vitriol;
     }
 </script>
 </body>
