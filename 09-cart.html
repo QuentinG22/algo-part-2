@@ -37,7 +37,12 @@
 </div>
 
 <script type="text/javascript">
+
+    // Code promo
+
     const VALID_PROMOTION_CODE = "10POUR100";
+
+    // Cette function sert à calculer un panier avec un code promo active
 
     function cartValue() {
         let articles = document.getElementById("articles");
@@ -50,11 +55,13 @@
 
         if (selectedArticle === "one") {
             value = one;
-        } else if (selectedArticle === "two") {
+        } 
+        
+        else if (selectedArticle === "two") {
             value = two;
         }
 
-        // Appliquer le code promo
+        // Application du code promo
         let promotion = 0.10;
         let valuepanier = value - (value * promotion);
 

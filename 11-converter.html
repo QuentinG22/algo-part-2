@@ -31,14 +31,43 @@
     </select>
 
     <br/>
-    <button type="button" class="btn btn-primary">
-        Connaître la valeur en USD->EUR ou EUR->USD
+    <button type="button" class="btn btn-primary" onclick="convertion()">
+        Convertion
     </button>
 </div>
 
 <script type="text/javascript">
     // 1 EUR = 1.0729 USD
+    const EUR_USD = "1.0729";
     // CODE HERE !
+
+    /*
+    *La function sert à convertir des sommes d'argent
+    *Euros vers Dollars et Dollars vers Euros
+    */
+
+    function convertion() {
+        let selectedCurrency = currencies.options[currencies.selectedIndex].value;
+        let value = document.getElementById("value").value;
+        
+        // Sommes saisis part l'utilisateur en Euros converti en Dollars
+
+        if (selectedCurrency === "eur") {
+            let convertedToUSD = value * EUR_USD;
+            // Pour arrondir le résultat 2 chiffre après la virgule
+            convertedToUSD = convertedToUSD.toFixed(2);
+            alert("La valeur de " + document.getElementById("value").value + '\u20AC' + " en Dollars est de " + convertedToUSD + '\u0024')
+        }
+
+        // Sommes saisis par l'utilisateur en Dollars converti en Euros
+
+        else if (selectedCurrency === "usd") {
+            let convertedToEUR = value / EUR_USD;
+            // Pour arrondir le résultat 2 chiffre après la virgule
+            convertedToEUR = convertedToEUR.toFixed(2);
+            alert("La valeur de " + document.getElementById("value").value + '\u0024' + " en Euros est de " + convertedToEUR + '\u20AC')
+        }
+    }
 </script>
 </body>
 </html>
