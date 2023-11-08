@@ -47,26 +47,40 @@
     function cartValue() {
         let articles = document.getElementById("articles");
         let selectedArticle = articles.options[articles.selectedIndex].value;
+        let promo = document.getElementById ('promotion').value;
 
         // CODE HERE !
-        let one = 30
-        let two = 50
-        let value;
+        let value = 0;
+        let one = 30;
+        let two = 50;
+        let promotion = 0.10;
 
-        if (selectedArticle === "one") {
-            value = one;
+        // Valeur du panier avec code promotion
+
+        if (selectedArticle === "one" && promo == VALID_PROMOTION_CODE) {
+            value = one - (one * promotion);
+            alert("La valeur de votre panier est de " + value + '\u20AC');
         } 
         
-        else if (selectedArticle === "two") {
-            value = two;
+        else if (selectedArticle === "two" && promo == VALID_PROMOTION_CODE) {
+            value = two - (two * promotion);
+            alert("La valeur de votre panier est de " + value + '\u20AC');
         }
 
-        // Application du code promo
-        let promotion = 0.10;
-        let valuepanier = value - (value * promotion);
+        // Valeur du panier sans code promotion
 
-        alert("La valeur de votre panier est de " + valuepanier + '\u20AC');
+        else if (selectedArticle === "one") {
+            value = one;
+            alert("La valeur de votre panier est de " + value + '\u20AC');
+        }
+
+        else if (selectedArticle === "two") {
+            value = two;
+            alert("La valeur de votre panier est de " + value + '\u20AC');
+        } 
     }
 </script>
+</script>
+
 </body>
 </html>
