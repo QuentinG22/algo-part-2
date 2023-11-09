@@ -47,26 +47,11 @@
     */
 
     function convertion() {
-        let selectedCurrency = currencies.options[currencies.selectedIndex].value;
         let value = document.getElementById("value").value;
+        let currency = document.getElementById("currencies").value;
         
-        // Sommes saisis part l'utilisateur en Euros converti en Dollars
-
-        if (selectedCurrency === "eur") {
-            let convertedToUSD = value * EUR_USD;
-            // Pour arrondir le résultat 2 chiffre après la virgule
-            convertedToUSD = convertedToUSD.toFixed(2);
-            alert("La valeur de " + document.getElementById("value").value + '\u20AC' + " en Dollars est de " + convertedToUSD + '\u0024')
-        }
-
-        // Sommes saisis par l'utilisateur en Dollars converti en Euros
-
-        else if (selectedCurrency === "usd") {
-            let convertedToEUR = value / EUR_USD;
-            // Pour arrondir le résultat 2 chiffre après la virgule
-            convertedToEUR = convertedToEUR.toFixed(2);
-            alert("La valeur de " + document.getElementById("value").value + '\u0024' + " en Euros est de " + convertedToEUR + '\u20AC')
-        }
+        if (currency === "eur") alert (value + " Euros -> " + Number.parseFloat(value * EURO_TO_USD).tofixed(2) + " Dollars");
+        else alert (value + " Dollars -> " + Number.parseFloat(value / EURO_TO_USD).toFixed(2) + " Euros");
     }
 </script>
 </body>
