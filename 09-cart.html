@@ -59,25 +59,29 @@
 
         if (selectedArticle === "one" && promo == VALID_PROMOTION_CODE) {
             value = one - (one * promotion);
-            alert("La valeur de votre panier est de " + value + '\u20AC');
+            alert("La valeur de votre panier est de " + value + '€');
         } 
         
         else if (selectedArticle === "two" && promo == VALID_PROMOTION_CODE) {
             value = two - (two * promotion);
-            alert("La valeur de votre panier est de " + value + '\u20AC');
+            alert("La valeur de votre panier est de " + value + '€');
         }
 
         // Valeur du panier sans code promotion
 
         else if (selectedArticle === "one") {
             value = one;
-            alert("La valeur de votre panier est de " + value + '\u20AC');
+            alert("La valeur de votre panier est de " + value + '€');
         }
 
         else if (selectedArticle === "two") {
             value = two;
-            alert("La valeur de votre panier est de " + value + '\u20AC');
+            alert("La valeur de votre panier est de " + value + '€');
         } 
+
+        else {
+            alert("Veuillez sélectionner un article");
+        }
     }
 </script>
 </script>

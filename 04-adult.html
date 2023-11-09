@@ -40,10 +40,12 @@
     *et de décider l'accès au site ou non.
     */
 
+    const MAJORITY = 18;    
+
     function verifyAge() {
         let age = document.getElementById("age").value;
         // CODE HERE !
-        if(age > 17)
+        if(age >= MAJORITY)
              {
                 alert("Bienvenue sur le site");
              }
